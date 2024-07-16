@@ -18,7 +18,7 @@ def convert_chart(input_file, output_file):
                     duration = 0  # Note has duration 0
                     output_chart.append(f"{time} {lane} {duration}")
             elif line.startswith("hold"):
-                match = re.match(r"hold\((\d+),(\d+)\)", line)
+                match = re.match(r"hold\((\d+),(\d+),(\d+)\)", line)
                 if match:
                     time = int(match.group(1)) / 1000.0  # Convert to seconds
                     lane = random.randint(
